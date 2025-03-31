@@ -1,18 +1,18 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-export const useRequestPost = (setIsUpdating) => {
-  const [taskValue, setTaskValue] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
+export const useRequestPost = (setIsUpdating, setNotes) => {
+  const [taskValue, setTaskValue] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (event) => {
-    setTaskValue(event.target.value)
-    setErrorMessage('')
-  }
+    setTaskValue(event.target.value);
+    setErrorMessage('');
+  };
 
   const templateForAddingTask = () => {
     if (!taskValue) {
-      setErrorMessage('Невозможно добавить пустую задачу')
-      return
+      setErrorMessage('Невозможно добавить пустую задачу');
+      return;
     }
 
     fetch('http://localhost:3000/notes', {
@@ -24,20 +24,24 @@ export const useRequestPost = (setIsUpdating) => {
       }),
     })
         .then((rowResponse) => rowResponse.json())
-        .finally(() => {
-          setTaskValue('')
-          setIsUpdating(false)
+        .then((newTask) => {
+          // Обновите состояние заметок, добавив новую задачу
+          setNotes((prevNotes) => [...prevNotes, newTask]);
         })
-  }
+        .finally(() => {
+          setTaskValue('');
+          setIsUpdating(false);
+        });
+  };
 
   const handleAddTask = (event) => {
-    event.preventDefault()
-    templateForAddingTask()
-  }
+    event.preventDefault();
+    templateForAddingTask();
+  };
 
   const addNewTask = () => {
-    templateForAddingTask()
-  }
+    templateForAddingTask();
+  };
 
   return {
     addNewTask,
@@ -45,5 +49,5 @@ export const useRequestPost = (setIsUpdating) => {
     handleInputChange,
     handleAddTask,
     errorMessage,
-  }
-}
+  };
+};
