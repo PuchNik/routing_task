@@ -23,11 +23,11 @@ export const useRequestPost = (setIsUpdating) => {
         completed: false,
       }),
     })
-        .then((rowResponse) => rowResponse.json())
-        .finally(() => {
-          setTaskValue('')
-          setIsUpdating(false)
-        })
+      .then((rowResponse) => rowResponse.json())
+      .finally(() => {
+        setTaskValue('')
+        setIsUpdating(false)
+      })
   }
 
   const handleAddTask = (event) => {

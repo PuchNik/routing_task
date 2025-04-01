@@ -20,6 +20,6 @@ export const useRequestGet = ({ isUpdating, setIsUpdating }) => {
   return {
     isLoading,
     notes,
-    setNotes
+    setNotes,
   }
 }

@@ -42,10 +42,6 @@ export const useRequestPut = (setIsUpdating) => {
   }
 }
 
-
-
-
-
 // export const useRequestPut = (setIsUpdating) => {
 //   const [idTaskModified, setIdTaskModified] = useState(null);
 //   const [editTaskValue, setEditTaskValue] = useState('');
