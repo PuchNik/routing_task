@@ -111,3 +111,11 @@
     border: 1px solid #a46dff;
 }
 
+.note-not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 40px;
+}

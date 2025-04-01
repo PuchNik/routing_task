@@ -7,3 +7,7 @@ export * from './searchNote/SearchNote.jsx'
 export * from './sortTasks/SortNotes.jsx'
 
 export * from './btn/Btn.jsx'
+
+export * from './notFound/NotFound.jsx'
+
+

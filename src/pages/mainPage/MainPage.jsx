@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {Link} from "react-router-dom"
 import styles from './MainPage.module.css'
+import {trimTheLine} from "../../helpers/index.js"
 
 import {
     SortNotes,
@@ -12,16 +13,25 @@ import {
 
 
 export const MainPage = () => {
+
     const [isUpdating, setIsUpdating] = useState(false)
 
-    const {isLoading, notes, setNotes} = useRequestGet({
-        isUpdating,
-        setIsUpdating,
-    })
+    // Request GET
+    const {isLoading, notes, setNotes} = useRequestGet({isUpdating, setIsUpdating})
 
-    const {addNewTask, taskValue, handleInputChange, handleAddTask, errorMessage} =
-        useRequestPost(setIsUpdating, setNotes)
+    // Request Post
+    const {
+        addNewTask,
+        taskValue,
+        handleInputChange,
+        handleAddTask,
+        errorMessage
+    } = useRequestPost(setIsUpdating, setNotes)
+
+    // SearchNote
     const {searchValue, handleSearchNote, filteredNotes} = SearchNote(notes)
+
+    // SortNotes
     const {sortedNotes} = SortNotes(notes, setNotes)
 
     return (
@@ -70,7 +80,7 @@ export const MainPage = () => {
                                 <Link to={`/notes/${id}`} key={id} className={styles['task-item']}>
                                     <li>
                                         <div className={styles['task-content']}>
-                                            <span className={styles['task-title']}>{title}</span>
+                                            <span className={styles['task-title']}>{trimTheLine(title, 60)}</span>
                                         </div>
                                     </li>
                                 </Link>
