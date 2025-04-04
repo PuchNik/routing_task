@@ -1,25 +1,21 @@
+// Custom hook - получение заметок
 import { useEffect, useState } from 'react'
 
-export const useRequestGet = ({ isUpdating, setIsUpdating }) => {
-  const [notes, setNotes] = useState([])
+export const useRequestGet = (setNotes) => {
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     setIsLoading(true)
-    setIsUpdating(true)
-
     fetch('http://localhost:3000/notes')
       .then((loadedData) => loadedData.json())
-      .then((taskData) => setNotes(taskData))
+      .then((noteData) => setNotes(noteData))
 
       .finally(() => {
         setIsLoading(false)
       })
-  }, [isUpdating])
+  }, [setNotes])
 
   return {
     isLoading,
-    notes,
-    setNotes,
   }
 }

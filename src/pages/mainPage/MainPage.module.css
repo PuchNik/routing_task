@@ -83,9 +83,12 @@
 }
 
 .task-content {
+  color: white;
+  text-align: center;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   padding: 15px 10px;
   margin-bottom: 25px;
@@ -151,18 +154,18 @@
   border-radius: 5px;
 }
 
-.edit-input {
-  min-width: calc(60vw - 10px);
-  margin: 0 10px 0 0;
-  padding: 12px 15px;
+/*.edit-input {*/
+/*    min-width: calc(60vw - 10px);*/
+/*    margin: 0 10px 0 0;*/
+/*    padding: 12px 15px;*/
 
-  color: white;
-  font-size: 18px;
-  background-color: #9950b32e;
+/*    color: white;*/
+/*    font-size: 18px;*/
+/*    background-color: #9950b32e;*/
 
-  border-radius: 5px;
-  border: 2px solid #a46dff;
-}
+/*    border-radius: 5px;*/
+/*    border: 2px solid #a46dff;*/
+/*}*/
 
 .empty-list-text {
   font-size: 32px;

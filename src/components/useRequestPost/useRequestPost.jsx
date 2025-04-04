@@ -1,17 +1,23 @@
 import { useState } from 'react'
 
-export const useRequestPost = (setIsUpdating) => {
-  const [taskValue, setTaskValue] = useState('')
+// Custom hook - добавление заметок
+export const useRequestPost = (setNotes) => {
+  const [noteValue, setNoteValue] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
 
+  // Обработка изменений вводимых данных
   const handleInputChange = (event) => {
-    setTaskValue(event.target.value)
+    setNoteValue(event.target.value)
     setErrorMessage('')
   }
 
-  const templateForAddingTask = () => {
-    if (!taskValue) {
+  // Добавление новой задачи (общая)
+  const templateForAddingNote = () => {
+    if (!noteValue) {
       setErrorMessage('Невозможно добавить пустую задачу')
+      setTimeout(() => {
+        setErrorMessage('')
+      }, 2500)
       return
     }
 
@@ -19,31 +25,36 @@ export const useRequestPost = (setIsUpdating) => {
       method: 'POST',
       headers: { 'Content-type': 'application/json; charset=utf-8' },
       body: JSON.stringify({
-        title: taskValue.charAt(0).toUpperCase() + taskValue.slice(1),
+        title: noteValue.charAt(0).toUpperCase() + noteValue.slice(1),
         completed: false,
       }),
     })
       .then((rowResponse) => rowResponse.json())
+      .then((newNote) => {
+        setNotes((prevNotes) => [...prevNotes, newNote])
+      })
+
       .finally(() => {
-        setTaskValue('')
-        setIsUpdating(false)
+        setNoteValue('')
       })
   }
 
-  const handleAddTask = (event) => {
+  // Обработка отправки формы
+  const handleAddNote = (event) => {
     event.preventDefault()
-    templateForAddingTask()
+    templateForAddingNote()
   }
 
-  const addNewTask = () => {
-    templateForAddingTask()
+  // Добавление новой задачи
+  const addNewNote = () => {
+    templateForAddingNote()
   }
 
   return {
-    addNewTask,
-    taskValue,
+    addNewNote,
+    noteValue,
     handleInputChange,
-    handleAddTask,
+    handleAddNote,
     errorMessage,
   }
 }
