@@ -1,1 +1,1 @@
-export * from "./TrimTheLine.js"
+export * from './TrimTheLine.js'

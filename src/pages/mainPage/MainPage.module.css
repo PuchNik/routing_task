@@ -1,157 +1,157 @@
 .app-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .content-container {
-    min-width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .title {
-    text-align: center;
+  text-align: center;
 }
 
 .filter-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    min-width: 80vw;
-    padding: 0 50px;
-    margin-bottom: 15px;
+  min-width: 80vw;
+  padding: 0 50px;
+  margin-bottom: 15px;
 }
 
 .search-input {
-    width: 15%;
-    padding: 12px 15px;
+  width: 15%;
+  padding: 12px 15px;
 
-    color: white;
-    font-size: 18px;
-    background-color: #9950b32e;
+  color: white;
+  font-size: 18px;
+  background-color: #9950b32e;
 
-    border-radius: 5px;
-    border: 2px solid #a46dff;
+  border-radius: 5px;
+  border: 2px solid #a46dff;
 }
 
 .sort-button {
-    padding: 12px 20px;
+  padding: 12px 20px;
 
-    color: #fff;
-    font-size: 20px;
-    background-color: #724caf;
+  color: #fff;
+  font-size: 20px;
+  background-color: #724caf;
 
-    border: none;
-    border-radius: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
 .task-input-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    margin-bottom: 40px;
-    min-width: 80vw;
+  margin-bottom: 40px;
+  min-width: 80vw;
 }
 
 .task-input {
-    min-width: 65vw;
-    padding: 12px 15px;
+  min-width: 65vw;
+  padding: 12px 15px;
 
-    color: white;
-    font-size: 18px;
+  color: white;
+  font-size: 18px;
 
-    border-radius: 5px;
-    border: 2px solid #a46dff;
-    background-color: #9950b32e;
+  border-radius: 5px;
+  border: 2px solid #a46dff;
+  background-color: #9950b32e;
 }
 
 .add-button {
-    padding: 12px 20px;
+  padding: 12px 20px;
 
-    color: #fff;
-    font-size: 20px;
-    background-color: #724caf;
+  color: #fff;
+  font-size: 20px;
+  background-color: #724caf;
 
-    border: none;
-    border-radius: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
 .task-content {
-    color: white;
-    text-align: center;
+  color: white;
+  text-align: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    padding: 15px 10px;
-    margin-bottom: 25px;
+  padding: 15px 10px;
+  margin-bottom: 25px;
 
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid #a46dff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #a46dff;
 }
 
 .task-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-    min-width: 80vw;
-    padding: 0;
-    margin: 0;
+  min-width: 80vw;
+  padding: 0;
+  margin: 0;
 
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .task-item {
-    min-width: 100%;
+  min-width: 100%;
 }
 
 .task-title {
-    display: inline-block;
-    width: 80%;
+  display: inline-block;
+  width: 80%;
 
-    font-size: 20px;
-    font-weight: 500;
+  font-size: 20px;
+  font-weight: 500;
 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .buttons-container {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .edit-button {
-    padding: 10px 15px;
+  padding: 10px 15px;
 
-    color: #fff;
-    font-size: 15px;
-    background-color: #c9ae42;
+  color: #fff;
+  font-size: 15px;
+  background-color: #c9ae42;
 
-    border: none;
-    border-radius: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
 .delete-button {
-    padding: 10px 15px;
+  padding: 10px 15px;
 
-    color: #fff;
-    font-size: 15px;
-    background-color: #861212;
+  color: #fff;
+  font-size: 15px;
+  background-color: #861212;
 
-    border: none;
-    border-radius: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
 /*.edit-input {*/
@@ -168,13 +168,13 @@
 /*}*/
 
 .empty-list-text {
-    font-size: 32px;
-    font-weight: 600;
+  font-size: 32px;
+  font-weight: 600;
 }
 
 .error-text {
-    text-align: center;
-    color: #e03030;
-    font-size: 20px;
-    font-weight: 500;
+  text-align: center;
+  color: #e03030;
+  font-size: 20px;
+  font-weight: 500;
 }

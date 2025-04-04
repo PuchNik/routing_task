@@ -1,121 +1,126 @@
 .task-item-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-    width: 100vw;
+  width: 100vw;
 }
 
 .task-item-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    width: 80%;
+  width: 80%;
 }
 
 .arrow-back {
-    width: 64px;
-    height: 64px;
-    max-width: 10%;
+  width: 64px;
+  height: 64px;
+  max-width: 10%;
 }
 
 .task-item-title {
-    min-width: 90%;
+  min-width: 90%;
+  max-width: 100%;
+  
+  display: block;
+  text-align: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 15px 10px;
+  margin: 25px;
 
-    font-size: 25px;
-    font-weight: 600;
-    padding: 15px 10px;
-    margin: 25px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 2px solid #a46dff;
 
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 2px solid #a46dff;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 .buttons-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 35%;
 
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .edit-button {
-    width: 170px;
-    padding: 10px 15px;
+  width: 170px;
+  padding: 10px 15px;
 
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    background-color: #c9ae42;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #c9ae42;
 
-    border: none;
-    border-radius: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
 .delete-button {
-    width: 170px;
-    padding: 10px 15px;
+  width: 170px;
+  padding: 10px 15px;
 
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    background-color: #861212;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #861212;
 
-    border: none;
-    border-radius: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
 .edit-form {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .edit-input {
-    width: 99%;
-    min-height: 100%;
-    margin: 0;
-    padding: 15px;
+  width: 99%;
+  min-height: 100%;
+  margin: 0;
+  padding: 15px;
 
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    background-color: #9950b32e;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #9950b32e;
 
-    border-radius: 5px;
-    border: 1px solid #a46dff;
+  border-radius: 5px;
+  border: 1px solid #a46dff;
 }
 
 .description-container {
-    font-size: 50px;
-    margin-bottom: 20px;
-    text-align: center;
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .description-item {
-    min-width: 80vw;
-    min-height: 50vh;
-    font-size: 20px;
-    padding: 15px;
-    background-color: #9950b32e;
-    border-radius: 5px;
-    border: 1px solid #a46dff;
+  color: white;
+  min-width: 80vw;
+  min-height: 50vh;
+  font-size: 20px;
+  padding: 15px;
+  background-color: #9950b32e;
+  border-radius: 5px;
+  border: 1px solid #a46dff;
 }
 
 .note-not-found {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 40px;
 }

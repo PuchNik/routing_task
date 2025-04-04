@@ -1,57 +1,60 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
-export const useRequestPost = (setIsUpdating, setNotes) => {
-    const [taskValue, setTaskValue] = useState('')
-    const [errorMessage, setErrorMessage] = useState('')
+// Custom hook - добавление заметок
+export const useRequestPost = (setNotes) => {
+  const [noteValue, setNoteValue] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
 
-    const handleInputChange = (event) => {
-        setTaskValue(event.target.value)
+  // Обработка изменений вводимых данных
+  const handleInputChange = (event) => {
+    setNoteValue(event.target.value)
+    setErrorMessage('')
+  }
+
+  // Добавление новой задачи (общая)
+  const templateForAddingNote = () => {
+    if (!noteValue) {
+      setErrorMessage('Невозможно добавить пустую задачу')
+      setTimeout(() => {
         setErrorMessage('')
-    };
+      }, 2500)
+      return
+    }
 
-    const templateForAddingTask = () => {
-        if (!taskValue) {
-            setErrorMessage('Невозможно добавить пустую задачу')
-            setTimeout(() => {
-                setErrorMessage('')
-            }, 2500)
-            return
-        }
+    fetch('http://localhost:3000/notes', {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({
+        title: noteValue.charAt(0).toUpperCase() + noteValue.slice(1),
+        completed: false,
+      }),
+    })
+      .then((rowResponse) => rowResponse.json())
+      .then((newNote) => {
+        setNotes((prevNotes) => [...prevNotes, newNote])
+      })
 
-        fetch('http://localhost:3000/notes', {
-            method: 'POST',
-            headers: {'Content-type': 'application/json; charset=utf-8'},
-            body: JSON.stringify({
-                title: taskValue.charAt(0).toUpperCase() + taskValue.slice(1),
-                completed: false,
-                description: ''
-            }),
-        })
-            .then((rowResponse) => rowResponse.json())
-            .then((newTask) => {
-                // Обновите состояние заметок, добавив новую задачу
-                setNotes((prevNotes) => [...prevNotes, newTask]);
-            })
-            .finally(() => {
-                setTaskValue('')
-                setIsUpdating(false)
-            });
-    };
+      .finally(() => {
+        setNoteValue('')
+      })
+  }
 
-    const handleAddTask = (event) => {
-        event.preventDefault()
-        templateForAddingTask()
-    };
+  // Обработка отправки формы
+  const handleAddNote = (event) => {
+    event.preventDefault()
+    templateForAddingNote()
+  }
 
-    const addNewTask = () => {
-        templateForAddingTask()
-    };
+  // Добавление новой задачи
+  const addNewNote = () => {
+    templateForAddingNote()
+  }
 
-    return {
-        addNewTask,
-        taskValue,
-        handleInputChange,
-        handleAddTask,
-        errorMessage,
-    };
-};
+  return {
+    addNewNote,
+    noteValue,
+    handleInputChange,
+    handleAddNote,
+    errorMessage,
+  }
+}
