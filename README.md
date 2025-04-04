@@ -1,12 +1,47 @@
-# React + Vite
+# Список дел (To-Do List)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это приложение "Список дел" разработано с использованием React и React Router. Оно позволяет пользователям управлять своими задачами, добавлять новые, редактировать и удалять существующие, а также осуществлять поиск и сортировку задач.
 
-Currently, two official plugins are available:
+## Функционал
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Главная страница ("/")
+- Отображает список задач, каждая из которых представлена в виде карточки.
+- Если текст задачи превышает одну строку, он обрезается многоточием ("...") в конце.
+- При нажатии на текст задачи открывается страница с полным описанием задачи.
+- Возможности редактирования и удаления задач перенесены на страницу задачи, что упрощает интерфейс главной страницы.
+- На главной странице также доступен функционал для добавления новой задачи.
+- Реализован поиск задач по заданной фразе, что позволяет находить нужные элементы в списке.
+- Добавлена кнопка для сортировки задач по алфавиту. Если кнопка не нажата, задачи отображаются в исходном порядке.
 
-## Expanding the ESLint configuration
+### Страница задачи ("/task/<id-задачи>")
+- Каждая задача имеет уникальный идентификатор, сгенерированный JSON Server при создании.
+- На странице задачи отображается полное описание задачи.
+- Реализована кнопка "Назад" (в виде стрелки), которая возвращает пользователя на предыдущую страницу.
+- При попытке перейти по некорректному адресу отображается страница с ошибкой 404 и адресом "/404".
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Технологии
+- React
+- React Router
+- JSON Server для хранения данных
+
+## Установка и запуск
+1. Клонируйте репозиторий:
+   ```bash
+   git clone <URL_репозитория>
+   ```
+2. Перейдите в директорию проекта:
+   ```bash
+   cd <имя_директории>
+   ```
+3. Установите зависимости:
+   ```bash
+   npm install
+   ```
+4. Запустите JSON Server:
+   ```bash
+   npm run json-server
+   ```
+5. Запустите приложение:
+   ```bash
+   npm start
+   ```
